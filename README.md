@@ -14,44 +14,46 @@
 ## 🏗️ Architecture
 
 ```mermaid
-flowchart TB
+flowchart LR
     subgraph Cloud["☁️ Cloud"]
         API["🌐 Eero Cloud API"]
     end
 
-    subgraph SDK["📦 SDK Layer"]
-        EERO_API["🐍 eero-api<br/><i>Python SDK</i>"]
+    subgraph SDK["📦 SDK"]
+        EERO_API["🐍 eero-api"]
     end
 
-    subgraph Applications["🚀 Applications"]
-        CLI["⌨️ eeroctl<br/><i>CLI Tool</i>"]
-        UI["🖥️ eero-ui<br/><i>Web Dashboard</i>"]
-        EXPORTER["📊 eero-prometheus-exporter<br/><i>Metrics Exporter</i>"]
+    subgraph Apps["🚀 Applications"]
+        direction TB
+        CLI["⌨️ eeroctl"]
+        EXPORTER["📊 exporter"]
+        UI["🖥️ eero-ui"]
     end
 
-    subgraph Distribution["📤 Distribution"]
-        HOMEBREW["🍺 homebrew-eeroctl<br/><i>Homebrew Tap</i>"]
+    subgraph Dist["📤 Distribution"]
+        HOMEBREW["🍺 homebrew"]
     end
 
-    subgraph Monitoring["📈 Monitoring"]
+    subgraph Mon["📈 Monitoring"]
+        direction TB
         PROMETHEUS["Prometheus"]
         GRAFANA["Grafana"]
     end
 
     API --> EERO_API
     EERO_API --> CLI
-    EERO_API --> UI
     EERO_API --> EXPORTER
+    EERO_API --> UI
     CLI -.-> HOMEBREW
     EXPORTER --> PROMETHEUS
     PROMETHEUS --> GRAFANA
-    PROMETHEUS --> UI
+    PROMETHEUS -.-> UI
 
     style Cloud fill:#e1f5fe,stroke:#01579b
     style SDK fill:#fff3e0,stroke:#e65100
-    style Applications fill:#e8f5e9,stroke:#2e7d32
-    style Distribution fill:#fce4ec,stroke:#880e4f
-    style Monitoring fill:#f3e5f5,stroke:#6a1b9a
+    style Apps fill:#e8f5e9,stroke:#2e7d32
+    style Dist fill:#fce4ec,stroke:#880e4f
+    style Mon fill:#f3e5f5,stroke:#6a1b9a
 ```
 
 ## 📄 License
