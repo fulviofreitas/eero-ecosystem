@@ -59,3 +59,13 @@ flowchart LR
 ## 📄 License
 
 MIT License - see individual project repositories for details.
+
+---
+
+<div align="center">
+
+## 📊 Repository Metrics
+
+![Repository Metrics](./metrics.repository.svg)
+
+</div>
