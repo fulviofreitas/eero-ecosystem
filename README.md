@@ -1,6 +1,21 @@
-# 🌐 eero-ecosystem
+<div align="center">
 
-> Unified workspace for the eero network management tools ecosystem
+# 🌐 Eero Ecosystem
+
+**Unified workspace for Eero network management tools**
+
+[![License](https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge)](LICENSE)
+
+---
+
+_A monorepo workspace containing all Eero network management projects._  
+_SDK, CLI, dashboard, Prometheus exporter, and Homebrew tap._
+
+[Projects](#-projects) · [Architecture](#️-architecture) · [License](#-license)
+
+</div>
+
+---
 
 ## 📦 Projects
 
